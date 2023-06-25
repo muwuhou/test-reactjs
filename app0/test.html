@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #content {
+                border-width: 1px;
+                border-style: solid;
+                border-color: blueviolet;
+                max-width: 70%;
+                margin: auto;
+                margin-top: 20%;
+                margin-bottom: 30%;
+                padding: 10px;
+            }
+            #title {
+                text-align: center;
+                /* border: 1px solid red; */
+                max-width: 50%;
+                margin: auto
+            }
+            button {
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .hotbutton {
+                color: brown;
+                background-color: aqua;
+            }
+            .peacebutton {
+                color: green;
+                background-color: snow;
+            }
+            .focusbutton {
+                color: red
+            }
+            #searchbox {
+                width: 85%;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            #console {
+                width: 90%;
+                height: 200px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <h1 id="title"> hello world</h1>
+            <div>
+                <input id="searchbox"/>
+                <button class="focusbutton" onclick="onSearch()">Search!</button>
+            </div>
+            <div>
+                <button class="hotbutton">Windows</button>
+                <button class="">Linux</button>
+                <button class="peacebutton">MacOS</button>
+            </div>
+            <div>
+                <button class="peacebutton">One</button>
+                <button>Two</button>
+                <button class="hotbutton">Three</button>
+            </div>
+            <div>
+                <textarea id="console"></textarea>
+            </div>
+        </div>
+        <script>
+            function onSearch() {
+                let input = document.getElementById("searchbox").value;
+                let messageboard = document.getElementById("console");
+                let time = new Date().toUTCString();
+                messageboard.append("\n" + time + ": " + input)
+            }
+        </script>
+    </body>
+</html>
